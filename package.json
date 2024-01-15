@@ -1,10 +1,9 @@
 {
     "name": "nk_ckeditor",
-    "author": "CKSource",
+    "author": "Nathan Watts",
     "description": "A custom CKEditor 5 build by Naykel.",
     "version": "0.0.1",
-    "license": "SEE LICENSE IN LICENSE.md",
-    "private": true,
+    "license": "ISC",
     "main": "./build/ckeditor.js",
     "types": "./build/ckeditor.d.ts",
     "dependencies": {
