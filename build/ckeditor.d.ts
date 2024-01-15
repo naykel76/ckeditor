@@ -1,8 +1,5 @@
-/**
- * @license Copyright (c) 2014-2024, CKSource Holding sp. z o.o. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
- */
-import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
+import { ClassicEditor as ClassicEditorBase } from '@ckeditor/ckeditor5-editor-classic';
+import { InlineEditor as InlineEditorBase } from '@ckeditor/ckeditor5-editor-inline';
 import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
@@ -19,8 +16,16 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { Undo } from '@ckeditor/ckeditor5-undo';
-declare class Editor extends ClassicEditor {
+declare class ClassicEditor extends ClassicEditorBase {
     static builtinPlugins: (typeof Autoformat | typeof BlockQuote | typeof Bold | typeof CloudServices | typeof Essentials | typeof Heading | typeof Image | typeof ImageCaption | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof Italic | typeof Link | typeof List | typeof MediaEmbed | typeof Paragraph | typeof PasteFromOffice | typeof TextTransformation | typeof Undo)[];
     static defaultConfig: EditorConfig;
 }
-export default Editor;
+declare class InlineEditor extends InlineEditorBase {
+    static builtinPlugins: (typeof Autoformat | typeof Bold | typeof Essentials | typeof Italic | typeof List | typeof Paragraph | typeof TextTransformation | typeof Undo)[];
+    static defaultConfig: EditorConfig;
+}
+declare const _default: {
+    ClassicEditor: typeof ClassicEditor;
+    InlineEditor: typeof InlineEditor;
+};
+export default _default;
